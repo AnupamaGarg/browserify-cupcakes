@@ -17,11 +17,19 @@ function populatePage(sweetArray){
    console.log(content.length);
 
    newDiv.innerHTML = content.join(" ");
-   // console.log("inner", newDiv.innerHTML);
    document.getElementById("cake-cards").append(newDiv);
 }
 
+//using fetch (which returns a promise)
+cakeInventory.loadInventory()
+   .then((sweetArray) => {
+      populatePage(sweetArray);
+   });
 
-const sweetStuff = cakeInventory.getInventory();
-console.log("sweetstuff", sweetStuff);
-populatePage(sweetStuff);
+
+
+
+
+
+
+
